@@ -74,8 +74,8 @@ class MyCustomFormState extends State<MyCustomForm> {
         body: Form(
           key: _formKey,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TextFormField(
                 controller: myController,
@@ -90,8 +90,12 @@ class MyCustomFormState extends State<MyCustomForm> {
                   return null;
                 },
               ),
-              Text(myController.text),
-              Text("Selected date: ${selectedDate.day}.${selectedDate.month}.${selectedDate.year}"),
+              Text(
+                  "Selected date: ${selectedDate.day}.${selectedDate.month}.${selectedDate.year}",
+                  style: TextStyle(
+                    fontSize: 17,
+                  ),
+              ),
               ElevatedButton(
                 onPressed: () {
                   _selectDate(context);
@@ -100,6 +104,9 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               Text(
                 'Selected time: ${_time.format(context)}',
+                style: TextStyle(
+                    fontSize: 17,
+                ),
               ),
               ElevatedButton(
                 onPressed: _selectTime,
