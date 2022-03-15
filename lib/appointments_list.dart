@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'add_new_appointment.dart';
 import 'calendar.dart';
+import 'event_map.dart';
+import 'map.dart';
 
 class AppointmentList extends StatefulWidget {
   const AppointmentList(
@@ -27,6 +29,16 @@ class AppointmentsListState extends State<AppointmentList> {
         automaticallyImplyLeading: false,
         title: Text(title),
         actions: [
+          IconButton(
+              icon: Icon(Icons.map_outlined),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                      new EventMaps()),
+                );
+              }),
           IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
@@ -78,6 +90,14 @@ class AppointmentsListState extends State<AppointmentList> {
                   ],
                 ),
                 Container(
+                  child:  IconButton(
+                      icon: Icon(Icons.pin_drop),
+                      padding: const EdgeInsets.only(left: 150.0),
+                      onPressed: () {
+
+                      }),
+                ),
+                Container(
                   child: IconButton(
                     icon: Icon(Icons.delete),
                     onPressed: () {
@@ -87,6 +107,7 @@ class AppointmentsListState extends State<AppointmentList> {
                     },
                   ),
                 ),
+
               ],
             ),
           );

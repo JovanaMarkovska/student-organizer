@@ -35,6 +35,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   syncfusion_flutter_calendar: ^19.4.53
+  google_maps_flutter: ^1.0.3
+  custom_google_map_markers: ^0.0.1
+  http: ^0.12.0+4
+  html: ^0.14.0+3
+  flappy_search_bar: 1.4.1
+  geolocator: ^6.2.0
+  font_awesome_flutter: ^9.1.0
+  provider: ^4.3.3
+  geocode:
+
 
 dev_dependencies:
   flutter_test:

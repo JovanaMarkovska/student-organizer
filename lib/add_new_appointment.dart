@@ -28,6 +28,7 @@ class AppointmentFormState extends State<AppointmentForm> {
   String subject = "";
   String date = "";
   String time = "";
+  String place = "";
   final _formKey = GlobalKey<FormState>();
   DateTime selectedDate = DateTime.now();
   TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
@@ -73,6 +74,8 @@ class AppointmentFormState extends State<AppointmentForm> {
       });
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +139,6 @@ class AppointmentFormState extends State<AppointmentForm> {
                         selectedDate.year.toString();
                     time = _time.format(context).toString();
                   });
-                  //addExamToList(Exam(name: name,date: date,time: time,dateTime: DateTime.parse('2022-05-10 13:00')));
                   addExamToList(Appointment(
                     startTime: DateTime(selectedDate.year, selectedDate.month,
                         selectedDate.day, _time.hour),
@@ -153,12 +155,6 @@ class AppointmentFormState extends State<AppointmentForm> {
                             title: 'Student Organizer',
                             appointments: appointments)),
                   );
-
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => AppointmentList(title:'kurac',appointments: appointments)));
-
                 }
               },
               child: const Text('Submit'),

@@ -15,6 +15,7 @@ class Calendar extends StatefulWidget {
 class _CalendarState extends State<Calendar> {
   List<Appointment> appointments = <Appointment>[];
 
+ 
   _CalendarState(this.appointments);
 
   @override
@@ -45,6 +46,7 @@ class _CalendarState extends State<Calendar> {
 class MeetingDataSource extends CalendarDataSource {
   MeetingDataSource(List<Appointment> source) {
     appointments = source;
+
   }
   @override
   DateTime getStartTime(int index) {
